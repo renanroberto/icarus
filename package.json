@@ -1,0 +1,36 @@
+{
+  "name": "profite-y",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Renan & Fat <renan.silva@profite.com.br, danilo.souza@profite.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.2.0",
+    "imagemin-webpack-plugin": "^2.1.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "postcss-loader": "^2.1.4",
+    "precss": "^3.1.2",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
