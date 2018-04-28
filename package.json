@@ -1,14 +1,15 @@
 {
-  "name": "profite-y",
-  "version": "0.0.1",
-  "description": "",
+  "name": "icarus",
+  "version": "1.0.0",
+  "description": "Um boilerplaite rápido e flexível para e-commerces vtex",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Renan & Fat <renan.silva@profite.com.br, danilo.souza@profite.com.br>",
+  "author": "Renan Roberto <renanroberto1@gmail.com>",
+  "thanks": "Danilo (Fat) <danilo.souza@profite.com.br>",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
