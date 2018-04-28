@@ -1,3 +1,3 @@
-# Profite Y
+# Projeto Icarus
 
 Em construção...
