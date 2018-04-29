@@ -75,16 +75,11 @@
         };
 
         grunt.initConfig(config);
-        for (name in pkg.devDependencies) {
-            if (name.slice(0, 6) === 'grunt-') {
-                grunt.loadNpmTasks(name);
-            }
-        }
+        grunt.loadNpmTasks('grunt-contrib-connect');
 
         _results = [];
-        for (taskName in tasks) {
-            taskArray = tasks[taskName];
-            _results.push(grunt.registerTask(taskName, taskArray));
+        for (let key in tasks) {
+            _results.push(grunt.registerTask(key, tasks[key]))
         }
         return _results;
     };
