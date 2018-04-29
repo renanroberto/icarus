@@ -1,3 +1,5 @@
+import './react'
+
 import home from './pages/home'
 import produto from './pages/produto'
 
