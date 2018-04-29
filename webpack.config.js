@@ -3,6 +3,7 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   output: { path: path.join(__dirname, "dist/arquivos") },
@@ -24,8 +25,13 @@ module.exports = {
     ]
   },
 
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
+
   plugins: [
-    // Copy the images folder and optimize all the images
     new CopyWebpackPlugin([{
       from: 'src/images/'
     }]),
