@@ -1,7 +1,7 @@
 
-import Page from './page'
+import Icarus from './icarus'
 
-class Home extends Page {
+class Home extends Icarus {
   constructor() {
     super('home')
   }
