@@ -9,6 +9,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = {
   output: { path: path.join(__dirname, "dist/arquivos") },
 
+  mode: process.env.NODE_ENV,
   watch: true,
 
   module: {
@@ -41,7 +42,10 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/images/'
     }]),
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    new ImageminPlugin({ 
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      disable: process.env.NODE_ENV !== 'production'
+     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].[hash].css"
