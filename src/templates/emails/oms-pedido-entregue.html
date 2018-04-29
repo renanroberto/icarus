@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <!-- So that mobile webkit will display zoomed in -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{_accountInfo.TradingName}}</title>
+    <style type="text/css">
+    /* Resets: see reset.css for details */
+    .ReadMsgBody {
+        width: 100%;
+        background-color: #ebebeb;
+    }
+    .ExternalClass {
+        width: 100%;
+        background-color: #ebebeb;
+    }
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+        line-height: 100%;
+    }
+    body {
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+    }
+    body {
+        padding: 0;
+    }
+    table td {
+        border-collapse: collapse;
+    }
+    .yshortcuts a {
+        border-bottom: none !important;
+    }
+    /* Constrain email width for small screens */
+    @media screen and (max-width: 600px) {
+        table[class="container"] {
+            width: 100% !important;
+        }
+    }
+    /* Give content more room on mobile */
+    @media screen and (max-width: 480px) {
+        .status {
+            padding-bottom: 0px;
+        }
+    }
+    /* Styles for forcing columns to rows */
+    @media only screen and (max-width: 600px) {
+        /* force container columns to (horizontal) blocks */
+        .container {
+            border-radius: 0 !important;
+        }
+        .no-padding-top-bottom-mobile {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding: 0 !important;
+        }
+        .img-product {
+            width: 70px;
+        }
+        .side-border {
+            padding-left: 0 !important;
+            border: none !important;
+        }
+        .button {
+            padding: 11px 0 !important;
+            font-size: 13px;
+            width: 100%;
+        }
+        .table-button {
+            width: 100% !important;
+        }
+        td[class="force-col"] {
+            display: block;
+            padding-right: 0 !important;
+        }
+        table[class="col-3"] {
+            /* unset table align="left/right" */
+            float: none !important;
+            width: 100% !important;
+            /* change left/right padding and margins to top/bottom ones */
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        /* remove bottom border for last column/row */
+        table[id="last-col-3"] {
+            border-bottom: none !important;
+        }
+        /* align images right and shrink them a bit */
+        img[class="col-3-img"] {
+            float: right;
+            margin-left: 6px;
+            max-width: 130px;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        .status {
+            width: 100% !important;
+        }
+        .status div {
+            width: 200px !important;
+        }
+    }
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0" bgcolor="#fff" style="padding:0px 0px;color:#333;" leftmargin="0" topmargin="0">
+    <!-- 100% wrapper (grey background) -->
+    <table width="100%" cellspacing="0" border="0" bgcolor="#fff">
+        <tbody>
+            <tr>
+                <td valign="top" bgcolor="#fff" align="center" class="no-padding-top-bottom-mobile" style="background-color: #fff;color:#333;">
+                    <!-- 600px container (white background) -->
+                    <table cellspacing="0" cellpadding="0" border="0" bgcolor="#fff" class="container" style="max-width:600px;">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#ffffff" align="left" class="container-padding" style="background-color: #ffffff; padding-left: 10px; padding-right: 3px; font-size: 13px; line-height: 19px; font-family: Helvetica, sans-serif; color: #333;">
+                                    <br />
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="columns-container">
+                                        <tbody>
+                                            <tr>
+                                                <td class="force-col" style="padding-right: 20px;">
+                                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="left" style="padding-bottom: 10px;border:none;border-left:0px;border-right:0px;" class="col-3">
+                                                        <tbody>
+                                                            <tr>
+                                                                <!-- <td align="left">
+                                                                    <a href="http://{{_accountInfo.HostName}}.com.br"><img height="55px" border="0" width="auto" style="border:none;border-left:0px;border-right:0px;" alt="{{_accountInfo.TradingName}}" src="http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show" class="img-logo"></a>
+                                                                </td> -->
+                                                                <td>
+                                                                  <table id="Table_01" width="570" border="0" cellpadding="0" cellspacing="0" align="center" style="font-family: Verdana, Geneva, sans-serif;;">
+                                                                      <tr>
+                                                                        <td style="background-color:#fff;text-align:center;">
+                                                                            <img src="http://<%= fileName %>.vteximg.com.br/arquivos/logo-<%= fileName %>.png" width="182" alt="<%= storeName %>" style="display:inline-block; border:0;padding: 30px 0;">
+                                                                        </td>
+                                                                      </tr>
+                                                                  </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="force-col" style="background: #f1f1f1;">
+                                                    <!-- ### BEGIN CONTENT ### -->
+                                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="left" style="padding-bottom:0;margin-bottom: 15px;" class="col-3">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <div style="color: #7F7F7F; font-size: 23px; font-family: sans-serif;font-weight:bold; display: none;">Pedido Entregue!</div>
+                                                                    <h3 style="font-family:Verdana, Geneva, sans-serif; color:#a1a1a1; font-size:20px; font-weight:normal; margin:10px 0 20px 0;">
+                                                                        Olá,
+                                                                        <strong style=" color:<%= themeDefaultColor %>; font-weight:normal;text-transform:uppercase;">{{clientProfileData.firstName}}</strong>.
+                                                                    </h3>
+                                                                    <div style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px; line-height: 17px; margin-bottom: 30px;">Seu produto foi entregue com sucesso!
+                                                                        <br>
+                                                                        <br>Caso tenha ocorrido alguma eventualidade ou tenha algum comentário a acrescentar, entre em contato com a gente. Estamos aqui para atendê-lo!</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="padding: 10px; background: #f1f1f1;">
+                                                                    {{#if giftRegistryData}}
+                                                                    <table cellspacing="0" cellspacing="0" style="padding-top:5px;padding-bottom:5px;padding-right:10px;" border="0" align="left" class="side-border">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="font-family:Verdana, Geneva, sans-serif; font-weight:normal; margin:10px 0 20px 0;">
+                                                                                    <div>Endereço de entrega
+                                                                                    </div>
+                                                                                    <span style="font-size: 12px!important; color #f1f1f1; font-family: Verdana;">{{giftRegistryData.description}}</span>
+                                                                                    <br/>
+                                                                                    <br/>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    {{else}}
+                                                                    <table cellspacing="0" cellspacing="0" style="padding-top:5px;padding-bottom:5px;padding-right:10px;" border="0" align="left" class="side-border">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="padding-bottom:0;">
+                                                                                    <div style="color:#000;font-size:14px;font-weight:bold;text-transform:uppercase;">Dados da entrega
+                                                                                    </div>
+                                                                                    <span style="font-size: 12px!important; color #f1f1f1; font-family: Verdana; color: #6c6c6c; ">
+                                                                                        <strong style="font-size: 14px; color: #000; font-weight: normal;">{{shippingData.address.receiverName}}</strong>
+                                                                                        <br />
+                                                                                        <span style="color: <%= themeDefaultColor %>">
+                                                                                            {{shippingData.address.street}} - {{shippingData.address.number}} - {{shippingData.address.neighborhood}}
+                                                                                            <br />{{shippingData.address.city}} - {{shippingData.address.state}}
+                                                                                            <br />{{shippingData.address.postalCode}}
+                                                                                            <br />
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    {{/if}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <table cellspacing="0" border="0" style="width: 96%; border-bottom:1px solid #333;border:1px solid #BBB;box-shadow:1px 1px 2px rgba(0,0,0,.4); margin: 0 2% 15px;">
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <strong style="font-size:14px;font-size:14px;display:inline-block;color:#000000; margin: 0 0 10px 15px;">ACOMPANHE AQUI O ÚLTIMO STATUS DA TRANSPORTADORA</strong>
+                                                                <td style="padding-left:10px; background: #ffffff;">
+                                                                    <table align="left" style="padding-bottom:0px;padding-top:10px;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div>
+                                                                                        <strong style="font-size:14px;font-size:14px;display:inline-block;color:#000000; display: none;">HISTÓRICO DE MOVIMENTAÇÃO</strong>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    {{#if package.courier}}
+                                                                                    <div style="display:inline-block;line-height:12px;font-size:12px;padding-left:3px;width:200px;">
+                                                                                        <p>Transportadora:
+                                                                                            <br>
+                                                                                            <strong>{{package.courier}}</strong>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    {{/if}}
+                                                                                    <div style="display:inline-block;line-height:12px;font-size:12px;padding-left:3px;width:200px;">
+                                                                                        <p>Cód Rastreio:
+                                                                                            <strong><a style="color:#0088cc;" href="{{package.trackingUrl}}">{{package.trackingNumber}}</a>
+                                                                                            </strong>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="padding-bottom:0;">
+                                                                    <table width="100%" style="border-top:1px solid #ccc;padding-top:5px;padding-bottom:20px;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="padding-left:10px;">
+                                                                                    <table cellpadding="10" align="left" style="padding-top:5px;width: 100%; font-size: 12px">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding-left:0;padding-bottom:0;padding-top:0;font-size:14px;">
+                                                                                                    <strong>
+                                                                                                        <span style="display:inline-block;">Movimentação:</span>
+                                                                                                    </strong>
+                                                                                                    <span>{{package.courierStatus.data.0.description}}</span>
+                                                                                                    <br>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <table cellpadding="15" align="left" style="padding-top:5px;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding-left:0;padding-bottom:0;padding-top:0;font-size:14px;">
+                                                                                                    <strong>
+                                                                                                        <span style="display:inline-block;">
+                                                                                                            Data:
+                                                                                                        </span>
+                                                                                                    </strong>
+                                                                                                    <span>{{formatDateTime package.courierStatus.data.0.lastChange}}</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <table class="status" style="padding-top:5px;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding-left:0;padding-bottom:0;padding-top:0;font-size:14px;">
+                                                                                                    {{#if package.courierStatus.data.0.city}}
+                                                                                                    <strong>
+                                                                                                        <span style="display:inline-block;">
+                                                                                                            Cidade:
+                                                                                                        </span>
+                                                                                                    </strong>
+                                                                                                    <span>{{package.courierStatus.data.0.city}}</span>
+                                                                                                    {{/if}}
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table width="100%" cellspacing="0" border="0">
+                                                        <!-- box-shadow:1px 1px 2px rgba(0,0,0,.4); -->
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding-left:10px;">
+                                                                    <table align="left" style="padding-bottom:0px;padding-top:10px;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div>
+                                                                                        <strong style="font-size:14px;font-size:14px;display:inline-block;">PRODUTOS ENCAMINHADOS</strong>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="padding-bottom:0; font-size:12px; color: #f1f1f1; font-family: Verdana;">
+                                                                    {{#each items}}
+                                                                    <table width="96%" style="border-bottom: 1px solid #b1b1b1;padding-top:10px;padding-bottom:10px; margin: 0 2%;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="padding-left:10px; color: <%= themeDefaultColor %>; font-size:12px; font-family: Verdana;">
+                                                                                    <span>{{quantity}} X {{name}}</span>
+                                                                                    <br>
+                                                                                    <table cellpadding="5" align="right" style="padding-top:5px;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding-left:0;padding-bottom:0;padding-top:0;font-weight: bold; font-size: 15px;">
+                                                                                                    <span>
+                                                                                                        <!-- {{quantity}}x  -->R$ {{formatCurrency sellingPrice}}</span>
+                                                                                                    <br>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    {{/each}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                    <br />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table cellspacing="0" cellpadding="4" border="0" align="right" style="margin-bottom:15px;border: 1px solid #BBB;padding-top:7px;padding-bottom:7px;padding-left:7px;padding-right:7px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign="top" align="right" style="color:#7F7F7F;">
+                                                                    Total
+                                                                </td>
+                                                                <td valign="top" align="right" style="text-align:left;">
+                                                                    R$ {{formatCurrency value}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table align="left" class="table-button">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h5 style="font-family:Verdana, Geneva, sans-serif; color:#595959; line-height:24px; font-size:13px; margin:20px 0; font-weight:normal;">
+                                                        <strong>IMPORTANTE:</strong>
+                                                        <p style="font-size: 11px; line-height: 14px;">- Todos os pedidos estão sujeitos à confirmação de disponibilidade de estoque e à liberação do crédito. Se o estoque do produto não tiver disponível para entrega, você será comunicado por telefone ou email por nossa Central de Atendimento.</p>
+                                                        <p style="font-size: 11px; line-height: 14px;">- Para sua segurança, realizamos análise interna das informações de seu pedido através da validação de dados cadastrais. Esse processo é independente da aprovação do seu pagamento pela instituição financeira. Caso necessário você será contatado, por isso, é importante que seus dados estejam sempre completos e atualizados.</p>
+                                                        <p style="font-size: 11px; line-height: 14px;">- O prazo de entrega é calculado a partir da data da confirmação do pagamento. Os prazos para confirmação de pagamento são: cartão em até 01 (um) dia útil, boleto bancário e transferência online em até 03 (três) dias úteis. Você receberá um email com a confirmação do seu pedido após sua compra.</p>
+                                                        <p style="font-size: 11px; line-height: 14px;">Para seu controle, guarde esse email até a entrega das mercadorias.</p>
+                                                        <p style="font-size: 11px; line-height: 14px;">Para acompanhar seu pedido, <a href="<%= vtexURL %>/account" target="_blank" style="color:<%= themeDefaultColor %>;">clique aqui</a> ou acesse <a href="<%= vtexURL %>" target="_blank" style="color:<%= themeDefaultColor %>;"><%= vtexURL %></a> e clique em "Meus Pedidos".</p>
+
+                                                        <h5 style="font-family:Verdana, Geneva, sans-serif; color:#595959; line-height:14px; font-size:11px; margin:20px 0; font-weight:normal;">Por favor, não responda este email, pois ele foi gerado automaticamente. Dúvidas? Entre em contato com a nossa <a href="<%= vtexURL %>/institucional" target="_blank" style="color:<%= themeDefaultColor %>;">Central de Atendimento.</a>
+                                                        </h5>
+                                                        <p style="font-family:Verdana, Geneva, sans-serif; color:#595959; line-height:14px; font-size:11px; margin:20px 0; font-weight:normal;">Atenciosamente,
+                                                            <br />Equipe <%= storeName %>
+                                                        </p>
+                                                        <br>
+                                                        <br>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table width="600" border="0" cellpadding="0" cellspacing="0" align="center"><tbody>
+        <tr style="background: #F8F8F8;">
+            <td colspan="3" width="600" height="77" style="font-family:Verdana, Geneva, sans-serif; color:#000; line-height:14px; font-size:22px; text-transform: uppercase; font-weight:normal; background: #F8F8F8; vertical-align: middle; text-align: center">
+                Atendimento
+            </td>
+        </tr>
+        <tr style="background: #F8F8F8;">
+            <td rowspan="4" width="158" height="120" style=""></td>
+            <td width="285" height="40" style="font-family:Verdana, Geneva, sans-serif; border: 1px solid #ccc;  vertical-align: middle; text-align: center; font-size: 14px; color: #888888">
+                <%= storeTel %>
+            </td>
+            <td rowspan="4" width="157" height="120"></td>
+        </tr>
+        <tr style="background: #F8F8F8;" width="285" height="10"><td></td></tr>
+        <tr style="background: #F8F8F8;">
+             <td width="285" height="40" style="font-family:Verdana, Geneva, sans-serif; border: 1px solid #ccc;  vertical-align: middle; text-align: center; font-size: 14px; color: #888888">
+                <%= storeEmail %>
+            </td>
+        </tr>
+        <tr style="background: #F8F8F8;" width="285" height="30"><td></td></tr>
+        <tr>
+            <td colspan="5">
+                <table><tbody>
+                    <tr>
+                        <td width="62" height="60"></td>
+                            <td width="479" height="60" style="font-family:Verdana, Geneva, sans-serif; vertical-align: middle; text-align: center; font-size: 12px; color: #888888">
+                              <%= storeName %> - CNPJ <%= storeCNPJ %>, End: <%= storeAddress %>
+                            </td>
+                        <td width="59" height="60"></td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody></table>
+    <!--/600px container -->
+    <!--/100% wrapper-->
+</body>
+
+</html>

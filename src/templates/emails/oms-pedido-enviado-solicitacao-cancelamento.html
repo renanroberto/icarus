@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Email-Notificacao</title>
+    </head>
+    <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="font-family: Verdana, Geneva, sans-serif;;">
+        <table id="Table_01" width="570" border="0" cellpadding="0" cellspacing="0" align="center" style="font-family: Verdana, Geneva, sans-serif;;">
+            <tr>
+              <td style="background-color:#fff;text-align:center;">
+                  <img src="http://<%= fileName %>.vteximg.com.br/arquivos/logo-<%= fileName %>.png" width="182" alt="<%= storeName %>" style="display:inline-block; border:0;padding: 30px 0;">
+              </td>
+            </tr>
+        </table>
+        <table width="550" border="0" cellpadding="0" cellspacing="0" align="center" style="font-family: Verdana, Geneva, sans-serif;">
+            <tr>
+                <td valign="top" style="padding-bottom: 20px;">
+                    <!-- conteudo -->
+                    <h3 style="font-family:Verdana, Geneva, sans-serif; color:#a1a1a1; font-size:20px; font-weight:normal; margin:10px 0 20px 0;">
+                    Olá, <strong style=" color:<%= themeDefaultColor %>; font-weight:normal;">{{clientProfileData.firstName}}</strong>.
+                    </h3>
+                    <h2 style="font-family:Verdana, Geneva, sans-serif; color:#434343; font-size:17px; font-weight:normal; margin-bottom:0; display:block;">Não foi possível cancelar seu pedido. <br>
+                    <span style="font-size:11px; color:<%= themeDefaultColor %>; display:inline;">Pedido realizado em {{formatDate creationDate}}</span></h2>
+                    <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;">Infelizmente seu pedido já foi enviado. <br>
+                    <strong style="color: #b94a48;">Você poderá recusar a entrega para que possamos cancelar seu pagamento.</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; background: #f1f1f1;">
+                    <!-- box cinza -->
+                    <!-- Novo ## ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ## -->
+
+                    <table width="530" border="0" cellspacing="0" cellpadding="0" style="display: inline-table;">
+                        <tr>
+                            <td>
+                                <div  style="font-size:14px; color:#333333; line-height:20px; text-transform:uppercase; font-weight:bold; margin-bottom:10px;" scope="col">Endereço de entrega</div>
+                                <div  style="color:<%= themeDefaultColor %>; font-weight:normal; font-size:11px">
+                                    <strong  style="font-size:13px; color:#696969; font-weight:normal; line-height:20px; text-transform:uppercase">{{shippingData.address.receiverName}}</strong><br />
+                                    {{shippingData.address.street}} - {{shippingData.address.number}} - {{shippingData.address.complement}} - {{shippingData.address.neighborhood}}<br />
+                                    {{shippingData.address.city}} - {{shippingData.address.state}}<br />
+                                    {{shippingData.address.postalCode}}<br />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style=" display:block; margin-top:20px; padding-top:20px; border-top:1px solid #d0d0d0;">
+                                    <div>
+                                        <strong style="font-size:13px; color:#666; font-weight:normal;">Pedido nº <span style="font-size:18px;display:inline-block; color:#666; font-weight:bold;">{{orderId}}</span></strong>
+                                    </div>
+                                    <br />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table width="100%" style="display: inline-table;" align="left" border="0" cellpadding="0" cellspacing="0">
+                                    <td>
+                                        <table style="display: inline-table;" align="left" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="vertical-align:top;font-size:16px;color:#BBB;padding-top:1px;">&#10003;</td>
+                                                <td style="font-weight:bold;line-height:16px;font-size:12px;padding-left:3px;color:#BBB;">PEDIDO REALIZADO</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="display: inline-table;" align="left" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="vertical-align:top;font-size:13px;color:#BBB;padding-left:3px;padding-right:5px;padding-top:1px;">&#10003;</td>
+                                                <td style="font-weight:bold;line-height:16px;font-size:12px;padding-left:3px;color:#BBB;">PAGAMENTO CONFIRMADO</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="display: inline-table;" align="left" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="vertical-align:top;font-size:13px;color:#51BC00;padding-left:3px;padding-right:5px;padding-top:1px;">&#10003;</td>
+                                                <td style="font-weight:bold;line-height:16px;font-size:12px;padding-left:3px;color:#51BC00;">PEDIDO ENVIADO</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table style="display: inline-table;" align="left" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="vertical-align:top;font-size:13px;color:#BBB;padding-left:3px;padding-right:5px;padding-top:1px;">&#9658;</td>
+                                                <td style="font-weight:bold;line-height:16px;font-size:13px;padding-left:3px;color:#BBB;">PEDIDO ENVIADO</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </table>
+                            </td>
+                        </tr>
+
+                                <tr>
+                                    <td>
+                                        <table width="100%" style="padding-top:20px;">
+                                            <tr>
+                                                <td style="border-top:1px solid #d0d0d0; margin-top: 20px;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+
+                        <tr>
+                            <td style="padding: 10px 0; background: #f1f1f1;"><!-- FORMA DE PAGAMENTO -->
+                                <div style="font-size:14px; color:#333333; line-height:20px; text-transform:uppercase; font-weight:bold;" scope="col">Produto(s)</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                               {{#each items}}
+                                <table width="100%" style="border-bottom:1px solid #d0d0d0;">
+                                    <tbody>
+                                        <tr>
+                                            <td  style="padding-top:10px;padding-bottom: 10px;">
+                                                <span style="font-size:12px; color:<%= themeDefaultColor %>;">{{quantity}} X {{name}}</span><br>
+                                                <table cellpadding="5" align="right" style="padding-top:5px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding-bottom:0;padding-top:0; font-size:12px; color:#222;">
+                                                                <strong style="font-size:15px;"> R$ {{multiplyCurrency quantity sellingPrice}}</strong><br>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{#each bundleItems}}
+                                {{#if name}}
+                                <table width="100%" style="border-top:1px solid #EEE;padding-top:5px;padding-bottom:5px;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding-left:10px;">
+                                                <table cellpadding="10" align="left" style="padding-top:5px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding-left:0; font-size:12px; color:#666; padding-bottom:0;padding-top:0;">
+                                                                <span>{{name}}</span><br>
+                                                                </strong><br>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellpadding="5" align="right" style="padding-top:5px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding-left:0;padding-bottom:0;padding-top:0; font-size:14px;">
+                                                                <span>R$ {{formatCurrency price}}</span><br>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{/if}}
+                                {{/each}}
+                                {{/each}}
+
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Novo ## ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ##  ## ## ## ## ## ## ## -->
+                    <!-- box cinza -->
+
+                    <!-- /conteudo -->
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <table cellspacing="0" cellpadding="4" border="0" width="100%">
+                        <tr>
+                            <td>
+                                <table cellspacing="0" cellpadding="4" border="0" align="right" style="margin-bottom:15px;border: 1px solid #BBB;padding-top:7px;padding-bottom:7px;padding-left:7px;padding-right:7px; margin-top:10px;">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" align="right" style="color:#7F7F7F; font-size:13px;">
+                                                Total
+                                            </td>
+                                            <td valign="top" align="right" style="color:#666; font-size:13px;">
+                                                R$ {{formatCurrency value}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <tr>
+                        <td>
+                            <h5 style="font-family:Verdana, Geneva, sans-serif; color:#595959; line-height:14px; font-size:11px; margin:20px 0; font-weight:normal;">Por favor, não responda este email, pois ele foi gerado automaticamente.<br/>
+Dúvidas? Entre em contato com a nossa <a href="<%= vtexURL %>/institucional" target="_blank" style="color:<%= themeDefaultColor %>;" >Central de Atendimento.</a></h5>
+                            <p style="font-family:Verdana, Geneva, sans-serif; color:#595959; line-height:14px; font-size:11px; margin:20px 0; font-weight:normal;">Atenciosamente,<br />
+                            Equipe <%= storeName %>
+                            </p>
+
+                        </td>
+                    </tr>
+                </td>
+            </tr>
+        </table>
+        <table width="600" border="0" cellpadding="0" cellspacing="0" align="center"><tbody>
+            <tr style="background: #F8F8F8;">
+                <td colspan="3" width="600" height="77" style="font-family:Verdana, Geneva, sans-serif; color:#000; line-height:14px; font-size:22px; text-transform: uppercase; font-weight:normal; background: #F8F8F8; vertical-align: middle; text-align: center">
+                    Atendimento
+                </td>
+            </tr>
+            <tr style="background: #F8F8F8;">
+                <td rowspan="4" width="158" height="120" style=""></td>
+                <td width="285" height="40" style="font-family:Verdana, Geneva, sans-serif; border: 1px solid #ccc;  vertical-align: middle; text-align: center; font-size: 14px; color: #888888">
+                    <%= storeTel %>
+                </td>
+                <td rowspan="4" width="157" height="120"></td>
+            </tr>
+            <tr style="background: #F8F8F8;" width="285" height="10"><td></td></tr>
+            <tr style="background: #F8F8F8;">
+                 <td width="285" height="40" style="font-family:Verdana, Geneva, sans-serif; border: 1px solid #ccc;  vertical-align: middle; text-align: center; font-size: 14px; color: #888888">
+                    <%= storeEmail %>
+                </td>
+            </tr>
+            <tr style="background: #F8F8F8;" width="285" height="30"><td></td></tr>
+            <tr>
+                <td colspan="5">
+                    <table><tbody>
+                        <tr>
+                            <td width="62" height="60"></td>
+                                <td width="479" height="60" style="font-family:Verdana, Geneva, sans-serif; vertical-align: middle; text-align: center; font-size: 12px; color: #888888">
+                                  <%= storeName %> - CNPJ <%= storeCNPJ %>, End: <%= storeAddress %>
+                                </td>
+                            <td width="59" height="60"></td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+        <!-- End Save for Web Slices -->
+    </body>
+</html>

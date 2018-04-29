@@ -1,0 +1,54 @@
+<!-- Classe: prateleira prateleira-padrao -->
+<!-- 6b1f2f0c-d763-491b-9862-56e1ae0ba95a -->
+
+#set($id = $product.Id)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+#set($evaluationRate = $product.EvaluationRate)
+
+<div class="prateleira__item" title="$escapedName" itemscope itemtype="http://schema.org/Product">
+
+    <a class="prateleira__image-link" href="$uri">
+
+        <div class="prateleira__image">
+            $product.GetImageTag(620,620)
+        </div>
+
+    </a>
+
+
+    <div class="prateleira__content">
+        <a class="prateleira__name" href="$uri" itemprop="name">
+            $product.Name
+        </a>
+
+        #if ($product.IsInStock)
+        <a class="prateleira__price" href="$uri" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+            #if ($product.HasBestPrice)
+                <span class="prateleira__list-price">$product.ListPrice</span>
+            #end
+
+            <span class="prateleira__best-price" itemprop="price">$product.BestPrice</span>
+
+
+            #if ($product.NumbersOfInstallment > 1)
+                <span class="prateleira__number-installment">${product.NumbersOfInstallment}x de $product.InstallmentValue</span>
+            #else
+                <span class="prateleira__number-installment">à vista</span>
+            #end
+        </a>
+        #else
+        <a class="prateleira__out-of-stock" href="$uri">
+            Produto Esgotado
+        </a>
+        #end
+
+        <a class="prateleira__flags" href="$uri">
+            <div class="prateleira__flags--discount-hightlight">$product.DiscountHightLight</div>
+            <div class="prateleira__flags--hightlight">$product.HightLight</div>
+        </a>
+    </div>
+    <a class="prateleira__view-product" href="$uri">Ver Produto</a>
+
+</div>

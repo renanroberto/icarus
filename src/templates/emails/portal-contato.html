@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <meta charset='utf-8'>
+    <!-- Facebook sharing information tags -->
+    <meta property='og:title' content='*|MC:SUBJECT|*' />
+
+    <title>{{_accountInfo.TradingName}}</title>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (Email-Notificacao.psd) -->
+<table id="Table_01" width="550" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+        <td colspan="3"><img src="http://<%= fileName %>.vteximg.com.br/arquivos/<%= fileName %>-headerMail.jpg" width="550" height="139" alt="" style="display:block; border:0;"></td>
+    </tr>
+    <tr>
+        <td width="36"></td>
+
+        <td width="479" valign="top">
+            <!-- conteudo -->
+
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Assunto:</strong><br /> {!assunto}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Nome:</strong><br /> {!name}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Email:</strong><br /> {!email}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Telefone: ({!telefoneDDD}) {!telefone}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Celular: ({!celularDDD}) {!celular}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Pedido:</strong><br /> {!pedido}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>CPF:</strong><br /> {!cpf}</p>
+            <p style="font-family:Verdana, Geneva, sans-serif; color:#6c6c6c; line-height:24px; font-size:13px;"><strong>Mensagem:</strong><br />{!mensagem}</p>
+
+            <!-- /conteudo -->
+        </td>
+
+      <td width="35"> </td>
+    </tr>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>
