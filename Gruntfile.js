@@ -11,8 +11,6 @@
 
     module.exports = function(grunt) {
 
-        var open
-
         const project = process.env.PROJECT
         const accountName = process.env.VTEX_ACCOUNT
         const environment = process.env.VTEX_ENV
