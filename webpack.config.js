@@ -7,7 +7,10 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
-  output: { path: path.join(__dirname, "dist/arquivos") },
+  output: {
+    path: path.join(__dirname, "dist/arquivos"),
+    filename: 'parceiro-pet.min.js'
+  },
 
   mode: process.env.NODE_ENV,
   watch: process.env.NODE_ENV === 'development',
@@ -47,7 +50,7 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production'
      }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "main-parceiro-pet.css",
       chunkFilename: "[id].[hash].css"
     })
   ]
