@@ -10,7 +10,7 @@ module.exports = {
   output: { path: path.join(__dirname, "dist/arquivos") },
 
   mode: process.env.NODE_ENV,
-  watch: true,
+  watch: process.env.NODE_ENV === 'development',
 
   module: {
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true // set to true if you want JS source maps
+        sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
@@ -42,7 +42,7 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/images/'
     }]),
-    new ImageminPlugin({ 
+    new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       disable: process.env.NODE_ENV !== 'production'
      }),
