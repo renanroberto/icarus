@@ -11,3 +11,5 @@ pages.forEach(page => {
     page.init()
   }
 })
+
+console.log('FUNCIONOU MLK!!!')
