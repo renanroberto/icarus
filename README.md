@@ -6,6 +6,7 @@
 - [x] Mover templates do Profite X para a pasta templates (templates vazios)
 - [x] Estrutura para React
 - [x] Verificar se o JS continua sendo minimizado
-- [ ] Vtex local
+- [x] Vtex local
 - [x] Production mode não entra em watch mode
 - [x] Development mode não minimiza arquivos
+- [ ] Remover configurações de teste (mudar nome dos arquivos compilados e as variavies de ambiente)
