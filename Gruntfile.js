@@ -84,8 +84,8 @@
 
         grunt.initConfig(config)
 
-        grunt.loadNPMTasks('grunt-contrib-connect')
-        grunt.loadNPMTasks('grunt-contrib-watch')
+        grunt.loadNpmTasks('grunt-contrib-connect')
+        grunt.loadNpmTasks('grunt-contrib-watch')
 
         const results = []
         for (let key in tasks) {
