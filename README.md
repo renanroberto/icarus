@@ -7,5 +7,5 @@
 - [x] Estrutura para React
 - [x] Verificar se o JS continua sendo minimizado
 - [ ] Vtex local
-- [ ] Production mode não entra em watch mode
-- [ ] Development mode não minimiza arquivos
+- [x] Production mode não entra em watch mode
+- [x] Development mode não minimiza arquivos
