@@ -26,6 +26,7 @@
     "file-loader": "^1.1.11",
     "grunt": "^1.0.2",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.1",
     "image-webpack-loader": "^4.2.0",
     "imagemin-webpack-plugin": "^2.1.1",
     "mini-css-extract-plugin": "^0.4.0",

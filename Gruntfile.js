@@ -13,10 +13,10 @@
         var accountName, _results, errorHandler, rewriteLocation, open, config, environment, secureUrl, imgProxyOptions, name, pkg, portalHost, portalProxyOptions, results, taskArray, taskName, tasks, verbose;
 
         pkg = grunt.file.readJSON('package.json');
-        accountName = process.env.VTEX_ACCOUNT || pkg.accountName || 'icarus';
-        environment = process.env.VTEX_ENV || 'vtexcommercestable';
+        accountName = 'parceiropet';
+        environment = 'vtexcommercestable';
 
-        secureUrl = process.env.VTEX_SECURE_URL || pkg.secureUrl || true;
+        secureUrl = true;
 
         verbose = grunt.option('verbose');
         if(secureUrl) {
@@ -45,13 +45,13 @@
         };
 
         config = {
-            fileName: accountName,
+            fileName: 'parceiro-pet',
             connect: {
                 http: {
                     options: {
                         hostname: "*",
                         livereload: true,
-                        port: process.env.PORT || 8080,
+                        port: process.env.PORT || 80,
                         middleware: [
                             middlewares.disableCompression,
                             middlewares.rewriteLocationHeader(rewriteLocation),
@@ -68,18 +68,36 @@
                         ]
                     }
                 }
+            },
+            watch: {
+                options: {
+                    livereload: true
+                },
+                js: {
+                    files: ['src/scripts/**/*.js'],
+                    tasks: ['connect']
+                },
+                grunt: {
+                    files: ['Gruntfile.js']
+                }
             }
         };
         tasks = {
-            'default': ['connect']
+            devoff: ['watch'],
+            default: ['connect', 'watch']
         };
 
         grunt.initConfig(config);
-        grunt.loadNpmTasks('grunt-contrib-connect');
+        for (name in pkg.devDependencies) {
+            if (name.slice(0, 6) === 'grunt-') {
+                grunt.loadNpmTasks(name);
+            }
+        }
 
         _results = [];
-        for (let key in tasks) {
-            _results.push(grunt.registerTask(key, tasks[key]))
+        for (taskName in tasks) {
+            taskArray = tasks[taskName];
+            _results.push(grunt.registerTask(taskName, taskArray));
         }
         return _results;
     };
