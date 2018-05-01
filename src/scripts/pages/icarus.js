@@ -8,7 +8,7 @@ export default class Icarus {
   ajaxStop() {}
 
   init() {
-    // Me desculpe oh senhor do Ecmascript
+    // Sorry, ES Lord
 
     $(document).ready(() => {
       this.common()
