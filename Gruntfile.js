@@ -11,7 +11,7 @@
 
     module.exports = function(grunt) {
 
-        var _results, open, config, name, portalHost, results, taskArray, taskName, tasks;
+        var open
 
         const project = process.env.PROJECT
         const accountName = process.env.VTEX_ACCOUNT
@@ -21,12 +21,14 @@
 
         const verbose = grunt.option('verbose');
 
-        let protocol = secureUrl ? 'https' : 'http'
+        const protocol = secureUrl ? 'https' : 'http'
 
-        let imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
+        const imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
         imgProxyOptions.route = '/arquivos'
 
-        let portalProxyOptions = url.parse(`${protocol}://${accountName}.${environment}.com.br`);
+        const portalHost = `${accountName}.${environment}.com.br`
+
+        const portalProxyOptions = url.parse(`${protocol}://${portalHost}`);
         portalProxyOptions.preserveHost = true
 
         const rewriteLocation = (location) => location.replace('https:', 'http:').replace(environment, 'vtexlocal');
@@ -37,7 +39,7 @@
             return grunt.log.warn(errString, req.url.yellow)
         };
 
-        config = {
+        const config = {
             fileName: project,
             connect: {
                 http: {
@@ -73,25 +75,24 @@
                     files: ['Gruntfile.js']
                 }
             }
-        };
-        tasks = {
+        }
+
+        const tasks = {
             devoff: ['watch'],
             default: ['connect', 'watch']
-        };
-
-        grunt.initConfig(config);
-        for (name in pkg.devDependencies) {
-            if (name.slice(0, 6) === 'grunt-') {
-                grunt.loadNpmTasks(name);
-            }
         }
 
-        _results = [];
-        for (taskName in tasks) {
-            taskArray = tasks[taskName];
-            _results.push(grunt.registerTask(taskName, taskArray));
-        }
-        return _results;
-    };
+        grunt.initConfig(config)
 
-}).call(this);
+        grunt.loadNPMTasks('grunt-contrib-connect')
+        grunt.loadNPMTasks('grunt-contrib-watch')
+
+        const results = []
+        for (let key in tasks) {
+          results.push(grunt.registerTask(key, tasks[key]));
+        }
+
+        return results
+    }
+
+}).call(this)
