@@ -2,50 +2,43 @@
 
     'use strict';
 
-    var middlewares = require('./middleware');
-    var url = require('url');
-    var proxy = require('proxy-middleware');
-    var httpPlease = require('connect-http-please');
-    var serveStatic = require('serve-static');
+    const middlewares = require('./middleware');
+    const url = require('url');
+    const proxy = require('proxy-middleware');
+    const httpPlease = require('connect-http-please');
+    const serveStatic = require('serve-static');
+    require('dotenv').config
 
     module.exports = function(grunt) {
 
-        var accountName, _results, errorHandler, rewriteLocation, open, config, environment, secureUrl, imgProxyOptions, name, pkg, portalHost, portalProxyOptions, results, taskArray, taskName, tasks, verbose;
+        var _results, open, config, name, portalHost, results, taskArray, taskName, tasks;
 
-        pkg = grunt.file.readJSON('package.json');
-        accountName = 'parceiropet';
-        environment = 'vtexcommercestable';
+        const project = process.env.PROJECT
+        const accountName = process.env.VTEX_ACCOUNT
+        const environment = process.env.VTEX_ENV
 
-        secureUrl = true;
+        const secureUrl = (process.env.SECURE_URL === 'secure')
 
-        verbose = grunt.option('verbose');
-        if(secureUrl) {
-          imgProxyOptions = url.parse("https://" + accountName + ".vteximg.com.br/arquivos");
-        } else {
-          imgProxyOptions = url.parse("http://" + accountName + ".vteximg.com.br/arquivos");
-        }
-        imgProxyOptions.route = '/arquivos';
+        const verbose = grunt.option('verbose');
 
-        portalHost = accountName + "." + environment + ".com.br";
-        if(secureUrl) {
-          portalProxyOptions = url.parse("https://" + portalHost + "/");
-        } else {
-          portalProxyOptions = url.parse("http://" + portalHost + "/");
-        }
-        portalProxyOptions.preserveHost = true;
+        let protocol = secureUrl ? 'https' : 'http'
 
-        rewriteLocation = function(location) {
-          return location.replace('https:', 'http:').replace(environment, 'vtexlocal');
-        }
+        let imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
+        imgProxyOptions.route = '/arquivos'
 
-        errorHandler = function(err, req, res, next) {
-            var errString, _ref, _ref1;
-            errString = (_ref = (_ref1 = err.code) !== null ? _ref1.red : void 0) !== null ? _ref : err.toString().red;
-            return grunt.log.warn(errString, req.url.yellow);
+        let portalProxyOptions = url.parse(`${protocol}://${accountName}.${environment}.com.br`);
+        portalProxyOptions.preserveHost = true
+
+        const rewriteLocation = (location) => location.replace('https:', 'http:').replace(environment, 'vtexlocal');
+
+        const errorHandler = (err, req, res, next) => {
+            let errString, _ref, _ref1;
+            errString = (_ref = (_ref1 = err.code) !== null ? _ref1.red : void 0) !== null ? _ref : err.toString().red
+            return grunt.log.warn(errString, req.url.yellow)
         };
 
         config = {
-            fileName: 'parceiro-pet',
+            fileName: project,
             connect: {
                 http: {
                     options: {
@@ -73,9 +66,8 @@
                 options: {
                     livereload: true
                 },
-                js: {
-                    files: ['src/scripts/**/*.js'],
-                    tasks: ['connect']
+                dist: {
+                    files: ['dist/**/*']
                 },
                 grunt: {
                     files: ['Gruntfile.js']

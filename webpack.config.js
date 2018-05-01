@@ -15,7 +15,7 @@ console.log(`Project ${project} starting...`)
 module.exports = {
   output: {
     path: path.join(__dirname, "dist/arquivos"),
-    filename: `${project}.js`
+    filename: `parceiro-pet.min.js`
   },
 
   mode: process.env.NODE_ENV,
@@ -56,7 +56,7 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production'
      }),
     new MiniCssExtractPlugin({
-      filename: `${project}.css`,
+      filename: `main-parceiro-pet.css`,
       chunkFilename: "[id].[hash].css"
     })
   ]

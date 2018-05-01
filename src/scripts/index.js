@@ -12,4 +12,4 @@ pages.forEach(page => {
   }
 })
 
-console.log('FUNCIONOU MLK!!!')
+console.log('vtexlocal funcionando')
