@@ -7,14 +7,13 @@
     const proxy = require('proxy-middleware');
     const httpPlease = require('connect-http-please');
     const serveStatic = require('serve-static');
-    require('dotenv').config
+    require('dotenv').config()
 
     module.exports = function(grunt) {
 
         const project = process.env.PROJECT
         const accountName = process.env.VTEX_ACCOUNT
         const environment = process.env.VTEX_ENV
-
         const secureUrl = (process.env.SECURE_URL === 'secure')
 
         const verbose = grunt.option('verbose');
