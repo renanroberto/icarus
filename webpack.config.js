@@ -6,10 +6,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
+require('dotenv').config()
+
+const project = process.env.PROJECT
+
+console.log(`Project ${project} starting...`)
+
 module.exports = {
   output: {
     path: path.join(__dirname, "dist/arquivos"),
-    filename: 'parceiro-pet.min.js'
+    filename: `${project}.js`
   },
 
   mode: process.env.NODE_ENV,
@@ -50,7 +56,7 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production'
      }),
     new MiniCssExtractPlugin({
-      filename: "main-parceiro-pet.css",
+      filename: `${project}.css`,
       chunkFilename: "[id].[hash].css"
     })
   ]
