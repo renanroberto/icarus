@@ -1,4 +1,8 @@
 .produto {
-  display: flex;
-  color: #000;
+  display: grid;
+  color: color(black alpha(.5));
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }

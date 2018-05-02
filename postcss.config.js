@@ -1,7 +1,11 @@
 module.exports = {
   plugins: [
+    require('precss'),
     require('postcss-import'),
-    require('postcss-cssnext'),
-    require('precss')
+    require('postcss-cssnext')({
+      features: {
+        autoprefixer: { grid: true }
+      }
+    })
   ]
 }
