@@ -1,1 +1,4 @@
-
+.produto {
+  display: flex;
+  color: #000;
+}
