@@ -1,1 +1,1 @@
-import './components/timer.js'
+import './components/timer'

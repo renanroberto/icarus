@@ -5,14 +5,14 @@ let interval
 
 class Timer extends Component {
   state = {
-    time: 0
+    time: 0,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     interval = window.setInterval(this.updateTime, 1000)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(interval)
   }
 
@@ -21,7 +21,7 @@ class Timer extends Component {
   }
 
   render() {
-    const time = this.state.time
+    const { time } = this.state
 
     return (
       <h1>Você está aqui há {time} segundo{time === 1 ? '' : 's'}</h1>
