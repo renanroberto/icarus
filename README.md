@@ -53,3 +53,4 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [ ] Implementar uma framework de testes (Qual?)
 - [ ] Adicionar linter (AirBnB & Style-linter)
 - [ ] Remover configurações de teste (.env)
+- [ ] Alterar o filename pattern
