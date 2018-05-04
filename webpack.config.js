@@ -10,12 +10,16 @@ require('dotenv').config()
 
 const project = process.env.PROJECT
 
-console.log(`Project ${project} starting...`)
+if (process.env.NODE_ENV === 'development') {
+  console.log(`Project ${project} starting...`)
+} else if (process.env.NODE_ENV === 'production') {
+  console.log(`Building project ${project} for production`);
+}
 
 module.exports = {
   output: {
     path: path.join(__dirname, "dist/arquivos"),
-    filename: `parceiro-pet.min.js`
+    filename: `${project}.min.js`
   },
 
   mode: process.env.NODE_ENV,
@@ -61,7 +65,7 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production'
      }),
     new MiniCssExtractPlugin({
-      filename: `main-parceiro-pet.css`,
+      filename: `main-${project}.css`,
       chunkFilename: "[id].[hash].css"
     })
   ]
