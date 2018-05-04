@@ -6,17 +6,40 @@ Um boilerplate rápido e flexível para e-commerces vtex
 
 Usar o Icarus é algo realmente simples, basta seguir os passos abaixo.
 
-### Baixe o projeto
+### 1. Baixe o projeto
 
-No terminal, use o comando `git clone https://github.com/renanroberto/icarus.git` para baixar o projeto.
+No terminal, use o comando `git clone https://github.com/renanroberto/icarus.git` para baixar o projeto e, em seguida, `cd icarus/` para acessar o diretório do projeto.
 
-### Instale as dependências
+### 2. Configure o projeto
 
-Ainda no terminal, na pasta do projeto, use o comando `npm install`. Caso não tenha o grunt instalado, use também `npm install --global grunt-cli` (talvez seja necessário usar o sudo). Isto irá instalar todas as dependências necessárias para o projeto.
+Renomeie o diretório para o nome do projeto e edite o arquivo `.env` com as configurações do projeto.
 
-### Iniciar o Icarus
+### 3. Instale as dependências
 
-Para começar a desenvolver basta usar o comando `npm run dev` e, quando tiver terminado, utilize o comando `npm run build` para compilar o projeto para produção.
+Novamente no terminal, use o comando `npm install`. Caso não tenha o grunt instalado, use também `npm install --global grunt-cli` (necessário usar sudo). Isto irá instalar todas as dependências necessárias para o projeto.
+
+### 4. Iniciar o Icarus
+
+Para começar a desenvolver basta usar o comando `npm run dev` e, em outra instância do terminal, o comando `sudo grunt`. Neste momendo basta acessar `{projeto}.vtexlocal.com.br` em seu navegador e um ambiente com hot-reload estará preparado para que você comece o projeto.
+
+### 5. Produção
+
+Quando for subir a loja é fortemente recomendado que faça isso em modo de produção. Para isto basta usar o comando `npm run build` que o Icarus irá fazer todo o trabalho de otimizar os arquivos para produção na pasta `dist/`.
+
+## Features
+
+- Configuração fácil
+- Super rápido!
+- Hot Reload (Vtex Local)
+- Cross Browser configurável (*default: Duas ultimas versões de cada browser e browsers com mais de 1% de uso global*)
+- React
+
+## Stack
+
+- Webpack
+- Babel
+- React
+- PostCSS
 
 ## TODO
 
@@ -27,6 +50,6 @@ Para começar a desenvolver basta usar o comando `npm run dev` e, quando tiver t
 - [x] Vtex local
 - [x] Production mode não entra em watch mode
 - [x] Development mode não minimiza arquivos
-- [ ] Remover configurações de teste (mudar nome dos arquivos compilados e as variavies de ambiente)
-- [ ] Fazer o vtex local funcionar sem o Grunt
-- [ ] Implementar uma framework de testes
+- [ ] Implementar uma framework de testes (Qual?)
+- [ ] Adicionar linter (AirBnB & Style-linter)
+- [ ] Remover configurações de teste (.env)
