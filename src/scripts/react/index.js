@@ -1,1 +1,1 @@
-import './components/shelf.js'
+import './components/timer.js'
