@@ -1,6 +1,7 @@
 .produto {
   display: grid;
-  color: color(black alpha(.5));
+  color: color(black alpha(0.5));
+  font-size: 12px;
 }
 
 ::placeholder {
