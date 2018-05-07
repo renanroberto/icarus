@@ -1,6 +1,6 @@
 # Projeto Icarus
 
-Um boilerplate rápido e flexível para e-commerces vtex
+Um boilerplate rápido e flexível para e-commerce
 
 ## Como usar
 
