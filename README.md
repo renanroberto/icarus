@@ -51,7 +51,7 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Production mode não entra em watch mode
 - [x] Development mode não minimiza arquivos
 - [x] Adicionar ESlint (AirBnB)
-- [ ] Adicionar Style linter
+- [x] Adicionar Style linter
 - [ ] Implementar uma framework de testes (Qual?)
 - [ ] Remover configurações de teste (.env)
 - [ ] Alterar o filename pattern
