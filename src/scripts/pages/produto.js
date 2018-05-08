@@ -1,5 +1,5 @@
 
-import Icarus from './icarus'
+import Icarus from '../core/icarus'
 
 class Produto extends Icarus {
   constructor() {
