@@ -23,12 +23,17 @@ module.exports = function(grunt) {
   const imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
   imgProxyOptions.route = '/arquivos'
 
-  const portalHost = `${accountName}.${environment}.com.br:${PORT}`
+  const portalHost = `${accountName}.${environment}.com.br`
 
   const portalProxyOptions = url.parse(`${protocol}://${portalHost}`)
   portalProxyOptions.preserveHost = true
 
-  const rewriteLocation = (location) => location.replace('https:', 'http:').replace(environment, 'vtexlocal')
+  const rewriteLocation = (location) => (
+    location
+      .replace('https:', 'http:')
+      .replace(environment, 'vtexlocal')
+      .replace('.com.br', `.com.br:${PORT}`)
+  )
 
   const errorHandler = (err, req, res, next) => {
       let errString, _ref, _ref1;
