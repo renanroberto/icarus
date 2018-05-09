@@ -5,6 +5,8 @@ const url = require('url')
 const proxy = require('proxy-middleware')
 const httpPlease = require('connect-http-please')
 const serveStatic = require('serve-static')
+
+require('quiet-grunt')
 require('dotenv').config()
 
 module.exports = function(grunt) {

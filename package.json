@@ -4,7 +4,7 @@
   "description": "Um boilerplaite rápido e flexível para e-commerces vtex",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev & grunt -q",
+    "start": "npm run dev & grunt",
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack",
     "test": "NODE_ENV=testing jest",
@@ -58,6 +58,7 @@
     "postcss-loader": "^2.1.4",
     "precss": "^3.1.2",
     "proxy-middleware": "^0.15.0",
+    "quiet-grunt": "^0.2.3",
     "serve-static": "^1.13.2",
     "style-loader": "^0.21.0",
     "stylelint": "^9.2.0",
