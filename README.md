@@ -52,6 +52,8 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Development mode não minimiza arquivos
 - [x] Adicionar ESlint (AirBnB)
 - [x] Adicionar Style linter
-- [ ] Implementar uma framework de testes (Qual?)
+- [x] Implementar uma framework de testes (Jest)
+- [x] Vtex local sem sudo
+- [ ] Definir alias para path
 - [ ] Remover configurações de teste (.env)
 - [ ] Alterar o filename pattern
