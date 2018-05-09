@@ -9,83 +9,85 @@ require('dotenv').config()
 
 module.exports = function(grunt) {
 
-    const project = process.env.PROJECT
-    const accountName = process.env.VTEX_ACCOUNT
-    const environment = process.env.VTEX_ENV
-    const secureUrl = (process.env.SECURE_URL === 'true')
+  const PORT = '8080'
 
-    const verbose = grunt.option('verbose')
+  const project = process.env.PROJECT
+  const accountName = process.env.VTEX_ACCOUNT
+  const environment = process.env.VTEX_ENV
+  const secureUrl = (process.env.SECURE_URL === 'true')
 
-    const protocol = secureUrl ? 'https' : 'http'
+  const verbose = grunt.option('verbose')
 
-    const imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
-    imgProxyOptions.route = '/arquivos'
+  const protocol = secureUrl ? 'https' : 'http'
 
-    const portalHost = `${accountName}.${environment}.com.br`
+  const imgProxyOptions = url.parse(`${protocol}://${accountName}.vteximg.com.br/arquivos`)
+  imgProxyOptions.route = '/arquivos'
 
-    const portalProxyOptions = url.parse(`${protocol}://${portalHost}`)
-    portalProxyOptions.preserveHost = true
+  const portalHost = `${accountName}.${environment}.com.br:${PORT}`
 
-    const rewriteLocation = (location) => location.replace('https:', 'http:').replace(environment, 'vtexlocal')
+  const portalProxyOptions = url.parse(`${protocol}://${portalHost}`)
+  portalProxyOptions.preserveHost = true
 
-    const errorHandler = (err, req, res, next) => {
-        let errString, _ref, _ref1;
-        errString = (_ref = (_ref1 = err.code) !== null ? _ref1.red : void 0) !== null ? _ref : err.toString().red
-        return grunt.log.warn(errString, req.url.yellow)
-    };
+  const rewriteLocation = (location) => location.replace('https:', 'http:').replace(environment, 'vtexlocal')
 
-    const config = {
-        fileName: project,
-        connect: {
-            http: {
-                options: {
-                    hostname: "*",
-                    livereload: true,
-                    port: process.env.PORT || 8080,
-                    middleware: [
-                        middlewares.disableCompression,
-                        middlewares.rewriteLocationHeader(rewriteLocation),
-                        middlewares.replaceHost(portalHost),
-                        middlewares.replaceHtmlBody(environment, accountName, secureUrl),
-                        httpPlease({
-                            host: portalHost,
-                            verbose: verbose
-                        }),
-                        serveStatic('./dist'),
-                        proxy(imgProxyOptions),
-                        proxy(portalProxyOptions),
-                        middlewares.errorHandler
-                    ]
-                }
-            }
-        },
-        watch: {
-            options: {
-                livereload: true
-            },
-            dist: {
-                files: ['dist/**/*']
-            },
-            grunt: {
-                files: ['Gruntfile.js']
-            }
-        }
-    }
+  const errorHandler = (err, req, res, next) => {
+      let errString, _ref, _ref1;
+      errString = (_ref = (_ref1 = err.code) !== null ? _ref1.red : void 0) !== null ? _ref : err.toString().red
+      return grunt.log.warn(errString, req.url.yellow)
+  };
 
-    const tasks = {
-        devoff: ['watch'],
-        default: ['connect', 'watch']
-    }
+  const config = {
+      fileName: project,
+      connect: {
+          http: {
+              options: {
+                  hostname: "*",
+                  livereload: true,
+                  port: process.env.PORT || PORT,
+                  middleware: [
+                      middlewares.disableCompression,
+                      middlewares.rewriteLocationHeader(rewriteLocation),
+                      middlewares.replaceHost(portalHost),
+                      middlewares.replaceHtmlBody(environment, accountName, secureUrl),
+                      httpPlease({
+                          host: portalHost,
+                          verbose: verbose
+                      }),
+                      serveStatic('./dist'),
+                      proxy(imgProxyOptions),
+                      proxy(portalProxyOptions),
+                      middlewares.errorHandler
+                  ]
+              }
+          }
+      },
+      watch: {
+          options: {
+              livereload: true
+          },
+          dist: {
+              files: ['dist/**/*']
+          },
+          grunt: {
+              files: ['Gruntfile.js']
+          }
+      }
+  }
 
-    grunt.initConfig(config)
+  const tasks = {
+      devoff: ['watch'],
+      default: ['connect', 'watch']
+  }
 
-    grunt.loadNpmTasks('grunt-contrib-connect')
-    grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.initConfig(config)
 
-    const results = []
-    for (let key in tasks) {
-      results.push(grunt.registerTask(key, tasks[key]))
-    }
+  grunt.loadNpmTasks('grunt-contrib-connect')
+  grunt.loadNpmTasks('grunt-contrib-watch')
 
-    return results
+  const results = []
+  for (let key in tasks) {
+    results.push(grunt.registerTask(key, tasks[key]))
+  }
+
+  return results
 }
