@@ -20,7 +20,7 @@ Novamente no terminal, use o comando `npm install`. Caso não tenha o grunt inst
 
 ### 4. Iniciar o Icarus
 
-Para começar a desenvolver basta usar o comando `npm run dev` e, em outra instância do terminal, o comando `sudo grunt`. Neste momendo basta acessar `{projeto}.vtexlocal.com.br` em seu navegador e um ambiente com hot-reload estará preparado para que você comece o projeto.
+Para começar a desenvolver basta usar o comando `npm start`. Neste momendo acesse `{nome-do-projeto}.vtexlocal.com.br` em seu navegador e um ambiente com hot-reload estará preparado para que você comece o projeto.
 
 ### 5. Produção
 
