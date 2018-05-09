@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 options: {
                     hostname: "*",
                     livereload: true,
-                    port: process.env.PORT || 80,
+                    port: process.env.PORT || 8080,
                     middleware: [
                         middlewares.disableCompression,
                         middlewares.rewriteLocationHeader(rewriteLocation),
