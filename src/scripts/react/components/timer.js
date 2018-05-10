@@ -5,7 +5,7 @@ let interval
 
 class Timer extends Component {
   state = {
-    time: 0,
+    time: 50,
   }
 
   componentDidMount() {
@@ -26,8 +26,8 @@ class Timer extends Component {
     let res = ''
 
     seconds = time % 60
-    minutes = Math.floor(seconds / 60) % 60
-    hours = Math.floor(minutes / 60)
+    minutes = Math.floor(time / 60) % 60
+    hours = Math.floor(time / 3600)
 
     if (hours) res += `${hours} ${unitH} e `
     if (minutes) res += `${minutes} ${unitM} e `
