@@ -20,11 +20,27 @@ class Timer extends Component {
     this.setState(prevState => ({ time: prevState.time + 1 }))
   }
 
+  convertTime = (time) => {
+    const [unitS, unitM, unitH] = ['segundos', 'minutos', 'horas']
+    let [seconds, minutes, hours] = [0, 0, 0]
+    let res = ''
+
+    seconds = time % 60
+    minutes = Math.floor(seconds / 60) % 60
+    hours = Math.floor(minutes / 60)
+
+    if (hours) res += `${hours} ${unitH} e `
+    if (minutes) res += `${minutes} ${unitM} e `
+    res += `${seconds} ${unitS}`
+
+    return res
+  }
+
   render() {
     const { time } = this.state
 
     return (
-      <h1>Você está aqui há {time} segundo{time === 1 ? '' : 's'}</h1>
+      <h1>Você está aqui a {this.convertTime(time)}</h1>
     )
   }
 }
