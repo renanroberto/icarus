@@ -22,6 +22,14 @@ module.exports = {
     filename: `${project}.min.js`
   },
 
+  resolve: {
+    extensions: ['.js'],
+    modules: ['node_modules', path.resolve(__dirname, 'src')],
+    alias: {
+      icarus: path.resolve(__dirname, 'src/scripts/core/icarus')
+    }
+  },
+
   mode: process.env.NODE_ENV,
   watch: process.env.NODE_ENV === 'development',
 

@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     return location
       .replace('https:', 'http:')
       .replace(environment, 'vtexlocal')
-      .replace('.com.br', `.com.br:${PORT}`)
+      // .replace('.com.br', `.com.br:${PORT}`)
   }
 
   const errorHandler = (err, req, res, next) => {

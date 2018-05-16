@@ -1,5 +1,5 @@
 
-import Icarus from '../core/icarus'
+import Icarus from 'icarus'
 
 class Home extends Icarus {
   constructor() {

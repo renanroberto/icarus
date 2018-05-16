@@ -1,4 +1,4 @@
-import Icarus from '../core/icarus'
+import Icarus from 'icarus'
 
 class Common extends Icarus {
   ready() {
