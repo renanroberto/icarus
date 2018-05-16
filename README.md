@@ -57,6 +57,7 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [ ] Implementar common.js
 - [ ] Implementar webpack-dev-server
 - [ ] Implementar reset/normalize de css
+- [ ] Implementar Enzyme para testes com React
 - [ ] Implementar teste end-to-end (Puppeteer)
 - [ ] Definir alias para path (core)
 - [ ] Remover configurações de teste (.env)
