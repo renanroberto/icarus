@@ -7,7 +7,7 @@ class Home extends Icarus {
   }
 
   ready() {
-    console.log('Você está na home!')
+    console.log('[ICARUS] Você está na home!')
   }
 }
 

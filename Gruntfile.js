@@ -11,7 +11,7 @@ require('dotenv').config()
 
 module.exports = function(grunt) {
 
-  const PORT = '8080'
+  const PORT = '80'
 
   const project = process.env.PROJECT
   const accountName = process.env.VTEX_ACCOUNT

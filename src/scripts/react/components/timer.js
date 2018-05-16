@@ -5,7 +5,7 @@ let interval
 
 class Timer extends Component {
   state = {
-    time: 50,
+    time: 0,
   }
 
   componentDidMount() {
