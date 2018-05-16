@@ -53,8 +53,8 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Adicionar ESlint (AirBnB)
 - [x] Adicionar Style linter
 - [x] Implementar uma framework de testes (Jest)
-- [x] Vtex local sem sudo
-- [ ] Implementar common.js
+- [x] Implementar common.js
+- [ ] Vtex local sem sudo
 - [ ] Implementar webpack-dev-server
 - [ ] Implementar reset/normalize de css
 - [ ] Implementar Enzyme para testes com React
