@@ -1,2 +1,3 @@
+@import './normalize';
 @import './pages/home';
 @import './pages/produto';

@@ -57,7 +57,7 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Definir alias para path
 - [x] Vtex local sem sudo
 - [x] Remover configurações de teste (.env)
-- [ ] Implementar reset/normalize de css
+- [x] Implementar normalize de css
 - [ ] Implementar Enzyme para testes com React
 - [ ] Implementar teste end-to-end (Puppeteer)
 - [ ] Implementar webpack-dev-server
