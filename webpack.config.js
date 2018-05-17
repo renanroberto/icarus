@@ -73,7 +73,7 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production'
      }),
     new MiniCssExtractPlugin({
-      filename: `main-${project}.css`,
+      filename: `main-${project}.min.css`,
       chunkFilename: "[id].[hash].css"
     })
   ]

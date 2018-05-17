@@ -45,4 +45,4 @@ class Timer extends Component {
   }
 }
 
-ReactDOM.render(<Timer />, document.querySelector('.wellcome-message'))
+ReactDOM.render(<Timer />, document.querySelector('.tipbar'))
