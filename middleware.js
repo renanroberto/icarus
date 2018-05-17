@@ -30,6 +30,7 @@ replaceHtmlBody = function(environment, accountName, secureUrl) {
       if (data) {
         data = data.replace(new RegExp(environment, "g"), "vtexlocal");
         data = data.replace(new RegExp("vteximg", "g"), "vtexlocal");
+        data = data.replace(new RegExp("vtexlocal.com.br", "g"), "vtexlocal.com.br:8080");
         if (secureUrl) {
           data = data.replace(new RegExp("https:\/\/" + accountName, "g"), "http://" + accountName);
         }

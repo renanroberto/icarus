@@ -11,7 +11,7 @@ require('dotenv').config()
 
 module.exports = function(grunt) {
 
-  const PORT = '80'
+  const PORT = '8080'
 
   const project = process.env.PROJECT
   const accountName = process.env.VTEX_ACCOUNT
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     return location
       .replace('https:', 'http:')
       .replace(environment, 'vtexlocal')
-      // .replace('.com.br', `.com.br:${PORT}`)
+      .replace('.com.br', `.com.br:${PORT}`)
   }
 
   const errorHandler = (err, req, res, next) => {
