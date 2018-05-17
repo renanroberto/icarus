@@ -54,11 +54,11 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Adicionar Style linter
 - [x] Implementar uma framework de testes (Jest)
 - [x] Implementar common.js
-- [ ] Vtex local sem sudo
+- [x] Definir alias para path
+- [x] Vtex local sem sudo
 - [ ] Implementar webpack-dev-server
 - [ ] Implementar reset/normalize de css
 - [ ] Implementar Enzyme para testes com React
 - [ ] Implementar teste end-to-end (Puppeteer)
-- [ ] Definir alias para path (core)
 - [ ] Remover configurações de teste (.env)
 - [ ] Alterar o filename pattern
