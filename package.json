@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev & grunt",
-    "local": "NODE_ENV=development webpack-dev-server --open",
+    "local": "webpack-dev-server --open",
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack",
     "test": "NODE_ENV=testing jest",
