@@ -65,9 +65,10 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin([{
-      from: 'src/images/'
-    }]),
+    new CopyWebpackPlugin([
+      { from: 'src/images/' },
+      { from: 'src/templates/pages/', to: path.resolve(__dirname, 'dist/') },
+  ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       disable: process.env.NODE_ENV !== 'production'
