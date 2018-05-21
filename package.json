@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev & grunt",
+    "local": "NODE_ENV=development webpack-dev-server --open",
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack",
     "test": "NODE_ENV=testing jest",
@@ -63,7 +64,8 @@
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
     "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.15"
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "react": "^16.3.2",
