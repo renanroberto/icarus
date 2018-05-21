@@ -77,5 +77,11 @@ module.exports = {
       filename: `main-${project}.min.css`,
       chunkFilename: "[id].[hash].css"
     })
-  ]
+  ],
+
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist/'),
+    port: 8080,
+    hot: true,
+  }
 }
