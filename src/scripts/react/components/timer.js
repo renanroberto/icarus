@@ -44,5 +44,5 @@ class Timer extends Component {
     )
   }
 }
-console.log('eita porra ta de sacanagem brother')
+
 ReactDOM.render(<Timer />, document.querySelector('.tipbar'))
