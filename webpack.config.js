@@ -4,14 +4,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 require('babel-polyfill')
 require('dotenv').config()
 
 const project = process.env.PROJECT
 const share = process.env.SHARE === 'true'
+const host = process.env.HOST
+const page = process.env.PAGE
 
 if (process.env.NODE_ENV === 'development') {
   console.log(`Project ${project} starting...`)
@@ -71,7 +73,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/templates/pages/ICARUS - home.html',
+      template: `./src/templates/pages/ICARUS - ${page}.html`,
       filename: './index.html',
     }),
     new CopyWebpackPlugin([
@@ -90,10 +92,10 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist/'),
     port: 8080,
-    host: share ? '10.212.4.4' : '',
+    host: share ? host : '',
     proxy: {
       '/arquivos': {
-        target: share ? 'http://10.212.4.4:8080' : 'http://localhost:8080',
+        target: share ? `http://${host}:8080` : 'http://localhost:8080',
         pathRewrite: { '^/arquivos': '' },
       },
     },
