@@ -1,7 +1,7 @@
-// =============================== IMPORT REACT ================================
-import './react'
+import engine from './core/engine'
 
 // =============================== IMPORT PAGES ================================
+import './react'
 import common from './pages/common'
 import home from './pages/home'
 import produto from './pages/produto'
@@ -9,12 +9,5 @@ import produto from './pages/produto'
 const pages = [home, produto]
 
 // =============================== ICARUS ENGINE ===============================
-const body = document.querySelector('body')
-pages.forEach((page) => {
-  if (body.classList.contains(page.name)) {
-    common.init()
-    page.init()
-  }
-})
 
-console.log('ICARUS STARTED')
+engine(pages, common)

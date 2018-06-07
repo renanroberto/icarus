@@ -4,27 +4,7 @@ Um boilerplate rápido e flexível para e-commerce
 
 ## Como usar
 
-Usar o Icarus é algo realmente simples, basta seguir os passos abaixo.
-
-### 1. Baixe o projeto
-
-No terminal, use o comando `git clone https://github.com/renanroberto/icarus.git` para baixar o projeto e, em seguida, `cd icarus/` para acessar o diretório do projeto.
-
-### 2. Configure o projeto
-
-Renomeie o diretório para o nome do projeto e edite o arquivo `.env` com as configurações do projeto.
-
-### 3. Instale as dependências
-
-Novamente no terminal, use o comando `npm install`. Caso não tenha o grunt instalado, use também `npm install --global grunt-cli` (necessário usar sudo). Isto irá instalar todas as dependências necessárias para o projeto.
-
-### 4. Iniciar o Icarus
-
-Para começar a desenvolver basta usar o comando `npm start`. Neste momendo acesse `{nome-do-projeto}.vtexlocal.com.br` em seu navegador e um ambiente com hot-reload estará preparado para que você comece o projeto.
-
-### 5. Produção
-
-Quando for subir a loja é fortemente recomendado que faça isso em modo de produção. Para isto basta usar o comando `npm run build` que o Icarus irá fazer todo o trabalho de otimizar os arquivos para produção na pasta `dist/`.
+...
 
 ## Features
 
@@ -58,7 +38,9 @@ Quando for subir a loja é fortemente recomendado que faça isso em modo de prod
 - [x] Vtex local sem sudo
 - [x] Remover configurações de teste (.env)
 - [x] Implementar normalize de css
+- [x] Implementar webpack-dev-server
+- [x] Sharing opcional
+- [x] Alterar o filename pattern
 - [ ] Implementar Enzyme para testes com React
 - [ ] Implementar teste end-to-end (Puppeteer)
-- [ ] Implementar webpack-dev-server
-- [ ] Alterar o filename pattern
+- [ ] Refatorar middleware.js e gruntfile

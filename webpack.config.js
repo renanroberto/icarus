@@ -1,14 +1,17 @@
 const path = require('path')
 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+require('babel-polyfill')
 require('dotenv').config()
 
 const project = process.env.PROJECT
+const share = process.env.SHARE === 'true'
 
 if (process.env.NODE_ENV === 'development') {
   console.log(`Project ${project} starting...`)
@@ -17,17 +20,19 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 module.exports = {
+  entry: ['babel-polyfill', './src'],
+
   output: {
-    path: path.join(__dirname, "dist/arquivos"),
-    filename: `${project}.min.js`
+    path: path.join(__dirname, 'dist/arquivos'),
+    filename: `${project}.min.js`,
   },
 
   resolve: {
     extensions: ['.js'],
     modules: ['node_modules', path.resolve(__dirname, 'src')],
     alias: {
-      icarus: path.resolve(__dirname, 'src/scripts/core/icarus')
-    }
+      icarus: path.resolve(__dirname, 'src/scripts/core/icarus'),
+    },
   },
 
   mode: process.env.NODE_ENV,
@@ -38,14 +43,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"]
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+    ],
   },
 
   optimization: {
@@ -57,33 +62,40 @@ module.exports = {
         uglifyOptions: {
           compress: {
             drop_console: true,
-          }
-        }
+          },
+        },
       }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/templates/pages/ICARUS - home.html',
+      filename: './index.html',
+    }),
     new CopyWebpackPlugin([
       { from: 'src/images/' },
-      { from: 'src/templates/pages/', to: path.resolve(__dirname, 'dist/') },
-  ]),
+    ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
-      disable: process.env.NODE_ENV !== 'production'
-     }),
+      disable: process.env.NODE_ENV !== 'production',
+    }),
     new MiniCssExtractPlugin({
-      filename: `main-${project}.min.css`,
-      chunkFilename: "[id].[hash].css"
-    })
+      filename: `${project}.min.css`,
+      chunkFilename: '[id].[hash].css',
+    }),
   ],
 
   devServer: {
     contentBase: path.resolve(__dirname, 'dist/'),
     port: 8080,
-    compress: true,
-    inline: true,
-    hot: true
-  }
+    host: share ? '10.212.4.4' : '',
+    proxy: {
+      '/arquivos': {
+        target: share ? 'http://10.212.4.4:8080' : 'http://localhost:8080',
+        pathRewrite: { '^/arquivos': '' },
+      },
+    },
+  },
 }
