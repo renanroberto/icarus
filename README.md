@@ -8,14 +8,27 @@ Um boilerplate rápido e flexível para e-commerces vtex
 
 1. Clone este repositório `git clone https://github.com/renanroberto/icarus.git`
 2. Delete o arquivo `.git`
-3. Renomeie a pasta e as informações necessarias no package.json
+3. Renomeie a pasta e as informações necessarias no `package.json`
 4. Instale as dependencias `npm install`
+
+### Configurar o projeto
+
+...
+
+### Iniciar o *Icarus*
+
+O *Icarus* pode ser iniciado em dois modos: **Local** e **Vtex Local**.
+
+- **Local**
+Para iniciar o modo local basta usar o comando `npm run local`. O *Icarus* irá abrir a página configurada no `.env` em seu navegador com Hot Module Replacement (HMR) habilitado.
+*Obs.: Os componentes vtex não serão renderizados, para isto deverá ser usado o modo Vtex Local*
+- **Vtex Local**
 
 ## Features
 
 - Configuração fácil
 - Super rápido!
-- Hot Reload (Vtex Local)
+- Hot Reload (Vtex Local e Webpack Dev Server)
 - Cross Browser configurável (*default: Duas ultimas versões de cada browser e browsers com mais de 1% de uso global*)
 - React
 
