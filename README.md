@@ -4,13 +4,13 @@ Um boilerplate rápido e flexível para e-commerces vtex
 
 ## Tabela de conteúdo
 
-1. [Como usar](#como-usar)
-1.1 [Instalação](#instalação)
-1.2 [Configurar o projeto](#configurar-o-projeto)
-1.3 [Iniciar o Icarus](#inicar-o-icarus)
-2. [Features](#features)
-3. [Stack](#stack)
-4. [TODO](#todo)
+* [Como usar](#como-usar)
+    * [Instalação](#instalação)
+    * [Configurar o projeto](#configurar-o-projeto)
+    * [Iniciar o Icarus](#inicar-o-icarus)
+* [Features](#features)
+* [Stack](#stack)
+* [TODO](#todo)
 
 ## Como usar
 
