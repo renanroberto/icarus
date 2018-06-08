@@ -1,10 +1,15 @@
 # Projeto Icarus
 
-Um boilerplate rápido e flexível para e-commerce
+Um boilerplate rápido e flexível para e-commerces vtex
 
 ## Como usar
 
-...
+### Instalação
+
+1. Clone este repositório `git clone https://github.com/renanroberto/icarus.git`
+2. Delete o arquivo `.git`
+3. Renomeie a pasta e as informações necessarias no package.json
+4. Instale as dependencias `npm install`
 
 ## Features
 
@@ -42,5 +47,4 @@ Um boilerplate rápido e flexível para e-commerce
 - [x] Sharing opcional
 - [x] Alterar o filename pattern
 - [ ] Implementar Enzyme para testes com React
-- [ ] Implementar teste end-to-end (Puppeteer)
-- [ ] Refatorar middleware.js e gruntfile
+- [ ] Implementar teste end-to-end (Recomendação: Puppeteer)
