@@ -13,16 +13,26 @@ Um boilerplate rápido e flexível para e-commerces vtex
 
 ### Configurar o projeto
 
-...
+Para configurar o projeto basta abrir o arquivo `.env` e mudar as variáveis de acordo com as especificidades do projeto. As variáveis são:
+- **PROJECT** - Nome do projeto
+- **VTEX_ACCOUNT** - Nome da conta vtex
+- **VTEX_ENV** - Ambiente vtex (ex.: vtexcommercestable)
+- **SECURE_URL** - HTTPS? (boolean)
+- **PAGE** - Nome da página que será servida no modo local
+- **HOST** - Seu IP local
+- **SHARE** - Será compartilhado com a rede? (boolean)
 
 ### Iniciar o *Icarus*
 
-O *Icarus* pode ser iniciado em dois modos: **Local** e **Vtex Local**.
+O *Icarus* pode ser iniciado em três modos: **Local**, **Vtex Local** e **Produção**.
 
 - **Local**
-Para iniciar o modo local basta usar o comando `npm run local`. O *Icarus* irá abrir a página configurada no `.env` em seu navegador com Hot Module Replacement (HMR) habilitado.
+Para iniciar no modo local basta usar o comando `npm run local`. O *Icarus* irá abrir a página configurada no `.env` em seu navegador com Hot Module Replacement (HMR) habilitado.
 *Obs.: Os componentes vtex não serão renderizados, para isto deverá ser usado o modo Vtex Local*
 - **Vtex Local**
+Para iniciar no modo vtex local basta usar o comando `npm start` e acessar `http://localhost:8080`. O *Icarus* irá proxiar os templates da vtex com os arquivos JS e CSS locais com Hot Reload.
+- **Produção**
+Para iniciar no modo de produção basta usar o comando `npm run build`. O Icarus irá minificar os arquivos e as imagens e deixar tudo na pasta `dist/`.
 
 ## Features
 
